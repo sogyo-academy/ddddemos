@@ -2,8 +2,7 @@ package demos.fp.order.nohiding
 
 case class Order(lines: List[OrderLine] = List(), orderId: String):
     def add(productId: String, amount: Int): Order =
-        val existingOrderLineAndIndex =
-            this.lines.zipWithIndex.filter(_._1.productId == productId).headOption
+        val existingOrderLineAndIndex = this.lines.zipWithIndex.find(_._1.productId == productId)
         val updatedLines = existingOrderLineAndIndex match
             case None =>
                 val newLine = OrderLine(productId, amount)

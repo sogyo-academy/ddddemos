@@ -1,4 +1,4 @@
-package demos.oop.order.nohiding;
+package demos.oop.order.refactoring;
 
 class OrderLine {
     private String productId;
@@ -7,9 +7,10 @@ class OrderLine {
     public OrderLine(String productId, int amount) {
         this.productId = productId;
         this.amount = amount;
+        this.validate();
     }
 
-    public void validate() {
+    private void validate() {
         if (this.amount <= 0 || this.amount > 10) {
             throw new RuntimeException("Order line amount must be positive and at most 10");
         }
@@ -29,15 +30,7 @@ class OrderLine {
         return productId;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
-
     public int getAmount() {
         return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
 }

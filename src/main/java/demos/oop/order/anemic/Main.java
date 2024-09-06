@@ -9,8 +9,10 @@ class Main {
         service.addToOrder("1234", 2);
         service.addToOrder("ABCD", 9);
 
-        // service.addToOrder("1234", -9);
-        // service.addToOrder("ABCD", 20);
+//        service.addToOrder("1234", -9);
+//        service.addToOrder("ABCD", 20);
+
+        order.getLines().get(0).setAmount(9000);
 
         OrderLine illegalOrderLine = new OrderLine("1234", -100);
         Order illegalOrder = new Order("Bad order");

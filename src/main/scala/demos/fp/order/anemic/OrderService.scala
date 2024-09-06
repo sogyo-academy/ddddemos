@@ -2,8 +2,7 @@ package demos.fp.order.anemic
 
 object OrderService:
     def addToOrder(order: Order, productId: String, amount: Int): Order =
-        val existingOrderLineAndIndex =
-            order.lines.zipWithIndex.filter(_._1.productId == productId).headOption
+        val existingOrderLineAndIndex = order.lines.zipWithIndex.find(_._1.productId == productId)
         val updatedLines = existingOrderLineAndIndex match
             case None =>
                 val newLine = OrderLineService.createOrderLine(productId, amount)

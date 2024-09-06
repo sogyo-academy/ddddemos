@@ -25,9 +25,8 @@ class OrderService {
 
     private OrderLine findExistingOrderLine(String productId) {
         List<OrderLine> lines = this.order.getLines();
-        for (int i = 0; i < lines.size(); i++) {
-            OrderLine orderLine = lines.get(i);
-            if (orderLine.getProductId() == productId) {
+        for (OrderLine orderLine : lines) {
+            if (orderLine.getProductId().equals(productId)) {
                 return orderLine;
             }
         }

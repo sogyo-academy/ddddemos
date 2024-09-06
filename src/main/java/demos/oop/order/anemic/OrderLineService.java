@@ -10,7 +10,7 @@ class OrderLineService {
 
     public void validate() {
         if (this.orderLine.getAmount() <= 0 || this.orderLine.getAmount() > 10) {
-            throw new RuntimeException("Order line exceeds the maximum amount");
+            throw new RuntimeException("Order line amount must be positive and at most 10");
         }
     }
 

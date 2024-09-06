@@ -1,4 +1,4 @@
-package demos.oop.order.nohiding;
+package demos.oop.order.hiding;
 
 class Main {
     public static void main(String[] args) {
@@ -11,12 +11,12 @@ class Main {
 //         order.add("1234", -9);
 //         order.add("ABCD", 20);
 
-        order.getLines().get(0).setAmount(9000);
+//        order.getLines().get(0).setAmount(9000);
 
         OrderLine illegalOrderLine = new OrderLine("1234", -100);
         Order illegalOrder = new Order("Bad order");
-        illegalOrder.getLines().add(illegalOrderLine);
-        illegalOrder.getLines().add(illegalOrderLine);
+//        illegalOrder.getLines().add(illegalOrderLine);
+//        illegalOrder.getLines().add(illegalOrderLine);
 
         System.out.println("Oops");
     }
