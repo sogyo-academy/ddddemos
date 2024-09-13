@@ -24,9 +24,8 @@ class Order {
     }
 
     private OrderLine findExistingOrderLine(String productId) {
-        for (int i = 0; i < this.lines.size(); i++) {
-            OrderLine orderLine = this.lines.get(i);
-            if (orderLine.getProductId() == productId) {
+        for (OrderLine orderLine : this.lines) {
+            if (orderLine.getProductId().equals(productId)) {
                 return orderLine;
             }
         }
