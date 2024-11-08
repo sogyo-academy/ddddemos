@@ -1,6 +1,6 @@
 from typing import Tuple
 
-from demos.fp.bank.bank_account import BankAccount
+from demos.bank.fp.bank_account import BankAccount
 
 type SourceAccount = BankAccount
 type TargetAccount = BankAccount

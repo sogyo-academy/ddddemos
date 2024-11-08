@@ -1,4 +1,4 @@
-from demos.oop.bank.bank_account import BankAccount
+from demos.bank.oop.bank_account import BankAccount
 
 
 class TransferService:
