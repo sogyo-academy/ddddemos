@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  ravendb:
+    image: "ravendb/ravendb:6.0.100-ubuntu.22.04-x64"
+    environment:
+      RAVEN_Setup_Mode: "None"
+      RAVEN_License_Eula_Accepted: "true"
+    volumes:
+      - ~/.RavenDB-usertest:/var/lib/ravendb/data
+    ports:
+      - 8080:8080
+      - 38888:38888
