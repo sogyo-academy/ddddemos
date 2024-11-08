@@ -16,6 +16,8 @@ class Order private(private val linesById: HashMap[String, OrderLine] = HashMap(
 
     def lines: List[OrderLine] = List.from(this.linesById.values)
 
+    override def toString: String = s"Order(lines=${this.lines}, orderId=${this.orderId})"
+
 
 object Order:
     def apply(orderId: String): Order = new Order(orderId = orderId)

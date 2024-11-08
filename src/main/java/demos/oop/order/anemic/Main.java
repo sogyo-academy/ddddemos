@@ -9,8 +9,16 @@ class Main {
         service.addToOrder("1234", 2);
         service.addToOrder("ABCD", 9);
 
-//        service.addToOrder("1234", -9);
-//        service.addToOrder("ABCD", 20);
+        try {
+            service.addToOrder("1234", -9);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            service.addToOrder("ABCD", 20);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         order.getLines().get(0).setAmount(9000);
 

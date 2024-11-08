@@ -8,15 +8,22 @@ class Main {
         order.add("1234", 2);
         order.add("ABCD", 9);
 
-//         order.add("1234", -9);
-//         order.add("ABCD", 20);
+        try {
+            order.add("1234", -9);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            order.add("ABCD", 20);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-//        order.getLines().get(0).setAmount(9000);
-
-        OrderLine illegalOrderLine = new OrderLine("1234", -100);
-        Order illegalOrder = new Order("Bad order");
-//        illegalOrder.getLines().add(illegalOrderLine);
-//        illegalOrder.getLines().add(illegalOrderLine);
+        try {
+            OrderLine illegalOrderLine = new OrderLine("1234", -100);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("Oops");
     }

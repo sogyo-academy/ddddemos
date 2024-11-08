@@ -35,7 +35,7 @@ class Order {
     public List<OrderLine> getLines() {
         return List.copyOf(this.lines);
     }
-    
+
     public String getOrderId() {
         return orderId;
     }

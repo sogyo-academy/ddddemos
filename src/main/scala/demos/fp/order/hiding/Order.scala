@@ -11,3 +11,5 @@ class Order(val lines: List[OrderLine] = List(), orderId: String):
                 val updatedLine = existingOrderLine.add(amount)
                 this.lines.updated(index, updatedLine)
         Order(lines = updatedLines, orderId = this.orderId)
+
+    override def toString: String = s"Order(lines=${this.lines}, orderId=${this.orderId})"

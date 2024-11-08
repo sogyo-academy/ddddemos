@@ -1,6 +1,6 @@
 package demos.fp.order.smartconstructor
 
-class Order private(val lines: List[OrderLine] = List(), val orderId: String):
+class Order private (val lines: List[OrderLine] = List(), val orderId: String):
     def add(productId: String, amount: Int): Order =
         val existingOrderLineAndIndex = this.lines.zipWithIndex.find(_._1.productId == productId)
         val updatedLines = existingOrderLineAndIndex match
@@ -11,6 +11,8 @@ class Order private(val lines: List[OrderLine] = List(), val orderId: String):
                 val updatedLine = existingOrderLine.add(amount)
                 this.lines.updated(index, updatedLine)
         new Order(lines = updatedLines, orderId=this.orderId)
+
+    override def toString: String = s"Order(lines=${this.lines}, orderId=${this.orderId})"
 
 
 object Order:
