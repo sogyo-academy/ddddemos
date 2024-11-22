@@ -32,3 +32,4 @@ metals.sbt
 /.worksheet/
 
 out
+__pycache__
