@@ -24,6 +24,6 @@ class BankAccount:
         source_account.withdraw(amount)
         self._balance += amount
 
-    def transfer_to(self, target_account: Self, amount: int) -> None:
+    def transfer_to(self, target_account: Self, amount: float) -> None:
         self._balance -= amount  # Oops
         target_account.deposit(amount)
