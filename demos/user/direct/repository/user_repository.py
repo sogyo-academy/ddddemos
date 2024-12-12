@@ -1,7 +1,7 @@
 import os
 
 from ravendb import DocumentStore
-from typing_extensions import Optional
+from typing import Optional
 
 from demos.user.direct.models.user import User
 
